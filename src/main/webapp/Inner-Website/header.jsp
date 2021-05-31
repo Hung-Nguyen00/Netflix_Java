@@ -23,7 +23,7 @@
 	 %>
 	<!-- Header start -->
     <header>
-        <a href="index.jsp" class="logo"><img src="https://truecostmovie.com/img/TTC/wp-content/uploads/2015/10/netflix_logo_digitalvideo-1.png" alt=""></a>
+        <a href="index.jsp?menu_id=0" class="logo"><img src="https://truecostmovie.com/img/TTC/wp-content/uploads/2015/10/netflix_logo_digitalvideo-1.png" alt=""></a>
         <ul class="navigation">
             <li class="active"><a href="index.jsp?menu_id=0">Home</a></li>
             <li><a href="tvShow.jsp?menu_id=1">TV Shows</a></li>
@@ -53,11 +53,11 @@
                 	<%for(AccountChild ac : ac_dao.getAccountChildsbyEmail(email_session)) { %>
                     <li>
                         <img class="img-border-radius" src="<%=ac.getAvatar()%>" alt="">
-                        <a href="${root}/logintoid?account_id=<%=ac.getAccountId() %>"><%=ac.getNameAccount() %></a>
+                        <a href="${root}/logintoid?account_id=<%=ac.getAccountId() %>" <%if(ac.getAccountId()==id_session){%> style="font-weight:bold;font-size:1.1rem;text-decoration: underline" <%}%>><%=ac.getNameAccount() %></a>
                     </li>
                     <%} %>
-                    <li class="dropdown-manage"><a href="#">Manage Profiles</a></li>
-                    <li class="dropdown-borderTop dropdown-manage"><a href="account.html">Account</a></li>
+                    <li class="dropdown-manage"><a href="browse.jsp">Manage Profiles</a></li>
+                    <li class="dropdown-borderTop dropdown-manage"><a href="account.jsp">Account</a></li>
                     <li class="dropdown-manage"><a href="#">Help Center</a></li>
                     <li class="dropdown-manage">
                     	<a href="${root}/logout">Sign out of Netflix</a>

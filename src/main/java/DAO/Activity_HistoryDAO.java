@@ -144,7 +144,18 @@ public class Activity_HistoryDAO {
 		return false;
 	}	
 	
-	
+	public boolean deleteActivity(int account_id, int movie_id) throws SQLException {
+		try {
+		Connection connection = DBConnect1.getConnecttion();
+		String sql = "DELETE FROM `netflix`.`activiti_history_movie` WHERE (`account_id` = '"+account_id+"') and (`movie_id` = '"+movie_id+"')";
+
+		PreparedStatement ps = connection.prepareCall(sql);
+		int temp = ps.executeUpdate();
+		return temp == 1;
+		} catch (Exception e) {
+		return false;
+		}
+	}
 	
 	public static void main(String[] args) throws SQLException  {
 		Activity_HistoryDAO AHM_dao = new Activity_HistoryDAO();

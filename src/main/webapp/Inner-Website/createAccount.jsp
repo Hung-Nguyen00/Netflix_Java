@@ -30,7 +30,7 @@ response.setHeader("Expires", "0");
 	String email= String.valueOf(session.getAttribute("email"));
 	 %>
     <header>
-        <a href="#" class="logo"><img src="https://truecostmovie.com/img/TTC/wp-content/uploads/2015/10/netflix_logo_digitalvideo-1.png" alt=""></a>
+        <a href="firstHome.jsp" class="logo"><img src="https://truecostmovie.com/img/TTC/wp-content/uploads/2015/10/netflix_logo_digitalvideo-1.png" alt=""></a>
     </header>
     <form action="${root}/CreateAccountChild" method="post">
     <div class="Create-ID-container">
@@ -42,7 +42,7 @@ response.setHeader("Expires", "0");
         </div>
         <div class="Create-ID-Info Create-ID-item">
             <div class="Create-ID-Info-Avatar">
-                <img src="../Inner-Website/data/img/gulogo-6.jpg" alt="">
+                <img src="https://racevietnam.com/Thumbnail/ExtraLarge/Upload/20191106/8135be55bd290a00e2f2c54b57731305.png" alt="">
             </div>
             <div class="Create-ID-Info-Name">
                 <input type="text" name="account_name" id="">
