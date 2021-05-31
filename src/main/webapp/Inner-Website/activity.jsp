@@ -72,16 +72,16 @@
                             Unsaved 
                             <%}%>
                             </div>
-                            <div class="col-8"><%=m.getNameMovie()%></div>
-                            <div class="col-3">
-                                <a href="#" class="text-dark px-3"><%if(ah.getLikebtn()==1){ %>
+                            <div class="col-8">
+                            <span class="text-dark px-3"><%if(ah.getLikebtn()==1){ %>
                                 Liked
                                 <%}else if(ah.getDislikebtn()==1){ %>
                                 Unliked
                                 <%} else{%>
                                 No Rating
-                                <%} %></a>
-                                <a href="" class="text-dark delete-btn" data-id="<%=m.getMovieId()%>"><i class="fa fa-ban" aria-hidden="true"></i></a>
+                                <%} %></span></div>
+                            <div class="col-3" style="font-weight:bold"><%=m.getNameMovie()%>
+                                <a style="margin-left:3rem" href="" class="text-dark delete-btn" data-id="<%=m.getMovieId()%>"><i class="fa fa-ban" aria-hidden="true"></i></a>
                             </div>
                         </div>
                         <%} %>
