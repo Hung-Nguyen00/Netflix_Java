@@ -94,7 +94,7 @@ response.setHeader("Expires", "0");
 	                    </h4>
 	                    <h4 class="info-movie-categories">
 	                        <% for(Category c1 : category_dao.getCategorybyMovieId(m.getMovieId())) { %>
-	                                        <a href="${root}/Inner-Website/detail_category.jsp?category_id=<%=c1.getCategoryId() %>"><%=c1.getNameCategory() %></a>
+	                                        <a href="${root}/Inner-Website/detail_category.jsp?category_id=<%=c1.getCategoryId() %>"><span style="color:white"><%=c1.getNameCategory() %></span></a>
 	                                        <%} %>
 	                    </h4>
 	                </div>
