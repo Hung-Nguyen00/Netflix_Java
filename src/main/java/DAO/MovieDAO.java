@@ -69,7 +69,7 @@ public class MovieDAO {
 				+ "INNER JOIN netflix.detail_movie as d ON d.category_id = c.category_id "
 				+ "where c.menu_id = '"+id_menu +"')";
 		}else {
-		 sql = "SELECT * FROM netflix.movie where top_hot = 1 order by top_hot asc";
+		 sql = "SELECT * FROM netflix.movie order by top_hot asc";
 		}
 		PreparedStatement ps = connection.prepareCall(sql);
 		ResultSet rs = ps.executeQuery();

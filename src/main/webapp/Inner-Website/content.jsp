@@ -139,7 +139,7 @@
 	                                <li> <span>Genres: 
 	                                    <span class="inner">
 	                                        <% for(Category c1 : category_dao.getCategorybyMovieId(m.getMovieId())) { %>
-	                                        <a href="${root}/Inner-Website/detail_category.jsp?category_id=<%=c1.getCategoryId() %>"><%=c1.getNameCategory() %></a>
+	                                        <a href="${root}/Inner-Website/detail_category.jsp?category_id=<%=c1.getCategoryId() %>"><span style="color:white"><%=c1.getNameCategory() %></span></a>
 	                                        <%} %>
 	                                    </span>
 	                                </li>
