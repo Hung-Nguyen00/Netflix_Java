@@ -27,7 +27,7 @@ public class CreateAccountChild extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 		HttpSession session = request.getSession();
-		String avatar = "../Inner-Website/data/img/gulogo-6.jpg";
+		String avatar = "https://racevietnam.com/Thumbnail/ExtraLarge/Upload/20191106/8135be55bd290a00e2f2c54b57731305.png";
 		String account_name = request.getParameter("account_name");
 		String email= String.valueOf(session.getAttribute("email"));
 		try {

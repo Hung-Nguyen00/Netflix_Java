@@ -91,14 +91,14 @@ public class LoginClientServlet extends HttpServlet {
 					} else
 					{
 						request.setAttribute("error", "Your email or password incorrect");	
-						url = "/Inner-Website/signup.jsp";
+						url = "/Inner-Website/login.jsp";
 					}
 					break;
 					
 				}
 			} else {
 				request.setAttribute("error", "Your email or password are not empty");	
-				url = "/Netflix_Clone/Inner-Website/login.jsp";
+				url = "/Inner-Website/login.jsp";
 			}
 		} catch (Exception e) {
 		}

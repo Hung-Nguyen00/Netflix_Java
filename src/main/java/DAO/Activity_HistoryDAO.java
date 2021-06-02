@@ -32,6 +32,19 @@ public class Activity_HistoryDAO {
 			 }
 			 return list;
 			 }
+	public boolean deleteActivity(int account_id, int movie_id) throws SQLException {
+		try {
+		Connection connection = DBConnect1.getConnecttion();
+		String sql = "DELETE FROM `netflix`.`activiti_history_movie` WHERE (`account_id` = '"+account_id+"') and (`movie_id` = '"+movie_id+"')";
+
+		PreparedStatement ps = connection.prepareCall(sql);
+		int temp = ps.executeUpdate();
+		return temp == 1;
+		} catch (Exception e) {
+		return false;
+		}
+	}
+	
 	public boolean checkActivity(int account_id, int movie_id) throws SQLException{
 		Connection connection = DBConnect1.getConnecttion();
 		String sql = "SELECT saved FROM activiti_history_movie WHERE account_id = '" + account_id + "' and movie_id = '"+ movie_id+"'";

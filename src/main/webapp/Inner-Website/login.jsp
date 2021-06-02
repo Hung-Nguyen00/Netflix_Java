@@ -21,7 +21,7 @@
 <body>
     <div class="container-fluid d-flex flex-column">
         <div class="header row pt-3 pl-5">
-            <a href="firstHome.jsp"><img src="../Inner-Website/data/img/logo1.png" alt="Weflix" /></a>
+            <a href="firstHome.jsp"><img src="${root}/Inner-Website/data/img/logo1.png" alt="Weflix" /></a>
         </div>
         <div class="body row">
             <div class="px-2">
