@@ -101,7 +101,7 @@ public class ManagerAdminServlet extends HttpServlet {
 						url = "/Admin/dist/index.jsp";
 					}
 					else {
-						session.setAttribute("error", "Account's name or password incorrect.!");
+						request.setAttribute("succced", "Account's name or password incorrect.!");	
 						url = "/Admin/dist/Login.jsp";
 					}
 					break;

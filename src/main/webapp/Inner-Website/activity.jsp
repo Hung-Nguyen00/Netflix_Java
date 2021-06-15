@@ -56,7 +56,7 @@
             </ul>
             <div class="col-2">
                 <a href="#">
-                    <img style="max-width: 48px; max-height: 48px" class="img-border-radius" src="https://occ-0-395-64.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABUqy-FKaqC_UTCHKRnqVxEoax4Bl_EHRvEYR0PdDDecAIlJQDQaQck8fFN2P6p7J5PL8EGKpusCFm7mCtLaI7iA.png?r=f08"
+                    <img style="max-width: 48px; max-height: 48px" class="img-border-radius" src="https://racevietnam.com/Thumbnail/ExtraLarge/Upload/20191106/8135be55bd290a00e2f2c54b57731305.png"
                         alt="avt1" />
                 </a>
             </div>

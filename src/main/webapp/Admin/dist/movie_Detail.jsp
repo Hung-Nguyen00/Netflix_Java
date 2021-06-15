@@ -150,19 +150,19 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="trailer">Trailer</label>
-                                        <input type="text" name="trailer" value="<%=movie.getTrailer() %>" placeholder="https://github.com/John-Nguyen0411/Clone-Netflix-/blob/main/Inner-Website/lib/js/app.js" class="form-control" id="trailer" placeholder="1234 Main St">
+                                        <input type="text" name="trailer" value="<%=movie.getTrailer() %>" placeholder="2AUmvWm5ZDQ" id="trailer" >
                                     </div>
                                     <div class="form-group">
                                         <label for="Image">Image</label>
-                                        <input type="text" name="image" value="<%=movie.getImage()%>" placeholder="https://github.com/John-Nguyen0411/Clone-Netflix-/blob/main/Inner-Website/lib/js/app.js" class="form-control" id="trailer" placeholder="1234 Main St">
+                                        <input type="text" name="image" value="<%=movie.getImage()%>" placeholder="https://occ-0-325-395.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABVRfKLCR9dktmbluwqisvwgF8ZNR4XUqoSd7t3OKZLc5AmHlsM0QgqigOAiD1pGdLcqz1tMnhHuWGP7cAyKkqlayvCBF.webp?r=595" class="form-control" id="trailer">
                                     </div>
                                     <div class="form-group">
                                         <label for="movie">Movie</label>
-                                        <input type="text" name="movie" value="<%=movie.getVideo()%>" placeholder="https://github.com/John-Nguyen0411/Clone-Netflix-/blob/main/Inner-Website/lib/js/app.js" class="form-control" id="movie">
+                                        <input type="text" name="movie" value="<%=movie.getVideo()%>" placeholder="2AUmvWm5ZDQ" class="form-control" id="movie">
                                     </div>
                                     <div class="form-group">
                                         <label for="Description">Description</label>
-                                        <textarea class="form-control" value="<%=movie.getDescriptionMovie()%>" name="description" id="Description" rows="3"> Hello</textarea>
+                                        <textarea class="form-control" value="<%=movie.getDescriptionMovie()%>" name="description" id="Description" rows="3"><%=movie.getDescriptionMovie()%></textarea>
                                     </div>
                                     <div class="form-group">
                                         <label for="Logo">Logo</label>

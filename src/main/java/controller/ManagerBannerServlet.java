@@ -1,6 +1,8 @@
 package controller;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -62,15 +64,18 @@ public class ManagerBannerServlet extends HttpServlet {
 				switch (command) {
 				case "update":
 					bannerDAO.update(new Banner((byte)banner_id, (byte) menu_id, Integer.parseInt(movie_id) ));
-					url = "/Netflix_Clone/Admin/dist/banner.jsp";
+					request.setAttribute("succced", "A banner was updated successfully");	
+					url = "/Admin/dist/banner.jsp";
 					break;						
 				}
 			} else {
-				url = "/Netflix_Clone/Admin/dist/banner.jsp";
+				request.setAttribute("error", error.toString());
+				url = "/Admin/dist/banner.jsp";
 			}
 		} catch (Exception e) {
 		}
-			response.sendRedirect(url);
+		RequestDispatcher rd = getServletContext().getRequestDispatcher(url);
+		rd.forward(request, response);
 	}
 
 }

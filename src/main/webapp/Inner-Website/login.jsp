@@ -36,7 +36,11 @@
                                 <%} %>
                     <div class="sign-in">
                         <div class="form-group input-group my-3">
-                            <input type="email" class="form-control bg-dark text-light w-100" name="email" id="input-username" aria-describedby="help-username" value="<%=request.getParameter("emailPar")%>" onfocus="showElement('usernameTip')" onblur="hideElement('usernameTip')" />
+                        <%if(request.getParameter("emailPar") != null){ %>
+                        <input type="email" class="form-control bg-dark text-light w-100" name="email" id="input-username" aria-describedby="help-username" value="<%=request.getParameter("emailPar")%>" onfocus="showElement('usernameTip')" onblur="hideElement('usernameTip')" />
+                          <%}else{ %>
+                          	<input type="email" class="form-control bg-dark text-light w-100" name="email" id="input-username" aria-describedby="help-username"  onfocus="showElement('usernameTip')" onblur="hideElement('usernameTip')" />
+                          <%} %>  
                             <small id="usernameTip" class="text-warning" style="display: none;">
                   <i class="fa fa-info-circle" aria-hidden="true"></i>
                   Please enter a valid email.

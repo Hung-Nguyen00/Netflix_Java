@@ -32,10 +32,10 @@
                                 </div>
                                 <div class="card-body">
                                     <form action="${root}/ManagerAdmin" method= "post">
-                                    <%if(session.getAttribute("error") !=null) {%>
-                                    	<p class="text-danger"> <%=session.getAttribute("error") %></p>
-                                    <%} %>
-                                    	
+                                    <%String succced = (String)request.getAttribute("succced"); %>
+                                <%if(succced != null){ %>
+                                	<p class="text-danger"><%=succced%> </p>
+                                <%} %>
                                         <div class="form-group">
                                             <label class="small mb-1" for="inputEmailAddress">Account's name</label>
                                             <input class="form-control py-4" name="name_account" type="text" placeholder="Enter email address" />       	

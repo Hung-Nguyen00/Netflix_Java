@@ -42,12 +42,14 @@ public class ManagerAccountServlet extends HttpServlet {
 			switch (command) {
 				case "delete":
 					accountDAO.delete(email);
-					url = "/Netflix_Clone/Admin/dist/account.jsp";
+					request.setAttribute("succced", "A Movie was deleted successfully");	
+					url = "/Admin/dist/account.jsp";
 					break;
 			}
 		} catch (Exception e) {
 		}
-		response.sendRedirect(url);
+		RequestDispatcher rd = getServletContext().getRequestDispatcher(url);
+		rd.forward(request, response);
 	}
 
 	/**
@@ -65,10 +67,7 @@ public class ManagerAccountServlet extends HttpServlet {
 		
 		StringBuilder error = new StringBuilder(); 
 		StringBuilder success = new StringBuilder(); 
-		if(email == "" || email == null)
-		{
-			error.append("Email is not empty </br>");	
-		}
+		
 		if(password == "" || password == null)
 		{
 			error.append("Password is not empty");	
@@ -101,9 +100,16 @@ public class ManagerAccountServlet extends HttpServlet {
 					break;
 				}
 			} else {
-				request.setAttribute("error", error.toString());
-				
-				url = "/Admin/dist/create_account.jsp";
+				switch (command) {
+				case "insert":
+					request.setAttribute("error", error.toString());
+					url = "/Admin/dist/create_account.jsp";
+					break;
+				case "update":
+					request.setAttribute("error", error.toString());
+					url = "/Admin/dist/update_account.jsp?command=update&email= " + request.getParameter("email_account");
+					break;
+				}
 			}
 		} catch (Exception e) {
 			

@@ -52,7 +52,13 @@
                     <ol class="breadcrumb mb-4">
                         <li class="breadcrumb-item"><a href="${root}/Admin/dist/index.jsp">Dashboard</a></li>
                         <li class="breadcrumb-item"><a href="${root}/Admin/dist/movie_Movie.jsp">Movie</a></li>
-                        <li class="breadcrumb-item active">Categories</li>
+                        <li class="breadcrumb-item active">Categories</li>a
+                          <li class="ml-5">  <%String succced = (String)request.getAttribute("succced"); %>
+                                <%if(succced != null){ %>
+                                	<p class="text-success"><%=succced%> </p>
+                                <%} %>
+                               </li>
+                      
                     </ol>
                     <div class="card mb-4">
                         <div class="card-header">

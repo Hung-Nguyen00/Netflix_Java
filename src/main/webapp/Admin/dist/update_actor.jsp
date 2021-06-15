@@ -21,30 +21,42 @@
 
 <body class="sb-nav-fixed">
 	<% ActorDAO actorDAO = new ActorDAO(); %>
-
+	<% String actor_id = request.getParameter("actor_id");
+		Actor actor = new Actor();
+		if(actor_id != null)
+		{
+			actor = actorDAO.getActor(Integer.parseInt(actor_id));
+		}
+	
+	%>
 	<jsp:include page="Header.jsp"></jsp:include>
-   <div class="modelAcc">
+   <div class="modelAcc open">
             <div class="model-account bgc-white p-20 bd">
                 <h6 class="c-grey-900 pt-3 text-center">Edit Account</h6>
                 <div class="mT-30 pr-2 pl-2 pb-2">
                     <form action="${root}/ManagerActorServlet" method="post">
                         <div class="form-group">
                            <label for="frist_Name">First Name</label>
-                            <input type="text" class="form-control" name="first_name" placeholder="First Name">
+                            <input type="text" class="form-control"  value="<%= actor.getFirstName() %>" name="first_name" placeholder="First Name">
                         </div>
                         <div class="form-group">
                             <label for="last_Name">Last Name</label>
-                            <input type="text" class="form-control" name="last_name" placeholder="Last Name">
+                            <input type="text" class="form-control" name="last_name"  value="<%= actor.getLastName() %>" placeholder="Last Name">
                         </div>
                         <div class="form-group">
                             <div class="checkbox checkbox-circle checkbox-info peers ai-c">
                                 <label for="inputCall2" class="peers peer-greed js-sb ai-c">
                                     <span class="peer peer-greed">Director</span>
                                 </label>
+                                <%if(actor.getDirector() == 1){ %>
+                                <input type="checkbox" id="director" checked name="director" class="director peer ml-1">
+                                <%}else{ %>
                                 <input type="checkbox" id="director" name="director" class="director peer ml-1">
+                                <%} %>
                             </div>
                         </div>
-                          <input type="hidden" name="command" value="insert">
+                        <input type="hidden" value="<%=actor.getActorId()%>" name="actor_id">
+                          <input type="hidden" name="command" value="update">
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
@@ -75,54 +87,7 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>STT</th>
-                                            <th>Full Name</th>
-                                            <th>Director</th>
-                                            <th>Last Update</th>
-                                            <th>Edit</th>
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>STT</th>
-                                            <th>Full Name</th>
-                                            <th>Director</th>
-                                            <th>Last Update</th>
-                                            <th>Edit</th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                    <% int i=0; %>
-                                    <% for(Actor actor : actorDAO.getListActor()){ %>
-                                        <tr>
-                                            <td><%=i++%></td>
-                                            <td><%=actor.getFirstName() + " " + actor.getLastName() %></td>
-                                            <td class="text-center">
-                                               <%if(actor.getDirector() == 1){ %>
-                                               	 <i class="fas fa-check-square "></i>
-                                               <%} %>
-                                            </td>
-                                            <td><%=actor.getLastUpdate()%></td>
-                                           <td class="text-center">
-                                                <button class="btn-tra	sh btn-danger border-0">  
-                                                     <a class="text-decoration-none text-light" href="${root}/ManagerActorServlet?command=delete&actor_id=<%=actor.getActorId()%>">
-                                                     <i class="fas fa-trash"></i>
-                                                     </a>                                                
-                                                     </button>
-                                                <button class="btn-wrench bg-info border-0">
-                                                  <a class="text-decoration-none text-light" 
-                                                  href="${root}/Admin/dist/update_actor.jsp?command=update&actor_id=<%=actor.getActorId()%>">
-                                                   <i class="fas fa-wrench"></i>
-                                                   </a>
-                                                </button>
-                                            </td>  
-                                        </tr>
-                                        <%} %>
-                                    </tbody>
-                                </table>
+                                
                             </div>
                         </div>
                     </div>
@@ -144,28 +109,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
 
     <script>
-    const model = document.querySelector('.modelAcc'),
-   		 btnAdd = document.querySelector('.btn-add'),
-    	body=document.querySelector('body'),
-    	checkBox = document.querySelector('.director')
-    checkBox.addEventListener('click',()=>{
-    	console.log(checkBox.checked);
-    })
-    
-    btnAdd.addEventListener('click', () => {
-        model.classList.add('open');
-        body.classList.add('hideScroll');
-        // get value of scroll
-        let topOffset = window.pageYOffset;
-        model.style.top = topOffset + 'px';
-    })
 
-    model.addEventListener("click", function(e) {
-        if (e.target.classList.contains('modelAcc')) {
-            model.classList.remove("open");
-            body.classList.remove('hideScroll');
-        }
-    });
 
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>

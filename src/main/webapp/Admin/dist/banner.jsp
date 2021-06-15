@@ -39,8 +39,15 @@
                         <li class="breadcrumb-item active">Banner</li>
                     </ol>
                     <div class="card mb-4">
-                        <div class="card-header">
+                        <div class="card-header d-flex">
                             <i class="fas fa-table mr-1"></i> Data Table Banner
+                            <div class="pl-3">
+                            	 <%String succced = (String)request.getAttribute("succced"); %>
+                                <%if(succced != null){ %>
+                                	<p class="text-success"><%=succced%> </p>
+                                <%} %>
+                                	<p class="text-danger">${error}</p>
+                            </div>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">

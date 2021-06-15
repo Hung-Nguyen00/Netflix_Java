@@ -43,12 +43,14 @@ public class ManagerActorServlet extends HttpServlet {
 			switch (command) {
 				case "delete":
 					actorDAO.delete(Integer.parseInt(actor_id));
-					url = "/Netflix_Clone/Admin/dist/actor.jsp";
+					request.setAttribute("succced", "A Actors was deleted successfully");	
+					url = "/Admin/dist/actor.jsp";
 					break;
 			}
 		} catch (Exception e) {
 		}
-		response.sendRedirect(url);
+		RequestDispatcher rd = getServletContext().getRequestDispatcher(url);
+		rd.forward(request, response);
 	}
 
 	/**
@@ -81,31 +83,32 @@ public class ManagerActorServlet extends HttpServlet {
 				case "insert":
 					if(director != null)
 					{
-						actorDAO.insert(new Actor(actorDAO.getMaxId()+1, first_name, last_name, Byte.parseByte("2")));
-						success.append("A new Actor is created susscessfully");
-						url = "/Netflix_Clone/Admin/dist/actor.jsp";
+						actorDAO.insert(new Actor(actorDAO.getMaxId()+1, first_name, last_name, Byte.parseByte("1")));
+						request.setAttribute("success","A new Actor is created susscessfully");
+						url = "/Admin/dist/actor.jsp";
 						break;
 					}
 					else
 					{
-						actorDAO.insert(new Actor(actorDAO.getMaxId()+1, first_name, last_name, Byte.parseByte("1")));
-						success.append("A new Actor is created susscessfully");
-						url = "/Netflix_Clone/Admin/dist/actor.jsp";
+						actorDAO.insert(new Actor(actorDAO.getMaxId()+1, first_name, last_name, Byte.parseByte("0")));
+						request.setAttribute("succced","A new Actor is created susscessfully");
+						url = "/Admin/dist/actor.jsp";
 						break;
 					}
 				case "update":
-					if(director.equals("true"))
+					if(director != null)
 					{
 						actorDAO.update(new Actor(Integer.parseInt(request.getParameter("actor_id")), first_name, last_name, Byte.parseByte("1")));
-						success.append("Updated succeeded");
-						url = "/Netflix_Clone/Admin/dist/actor.jsp";
+						request.setAttribute("succced","Updated succeeded");
+					
+						url = "/Admin/dist/actor.jsp";
 						break;
 					}
 					else
 					{
 						actorDAO.update(new Actor(Integer.parseInt(request.getParameter("actor_id")), first_name, last_name, Byte.parseByte("0")));
-						success.append("Updated succeeded");
-						url = "/Netflix_Clone/Admin/dist/actor.jsp";
+						request.setAttribute("succced","Updated succeeded");
+						url = "/Admin/dist/actor.jsp";
 						break;
 					}
 				default:
@@ -113,7 +116,7 @@ public class ManagerActorServlet extends HttpServlet {
 				}
 			} else {
 				request.setAttribute("error", error.toString());
-				url = "/Netflix_Clone/Admin/dist/actor.jsp";
+				url = "/Admin/dist/actor.jsp";
 			}
 		} catch (Exception e) {
 		}

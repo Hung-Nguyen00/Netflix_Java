@@ -32,8 +32,11 @@
         <div class="modelAcc">
             <div class="model-account bgc-white p-20 bd">
                 <h6 class="c-grey-900 pt-3 text-center">Edit Account</h6>
+                
                 <div class="mT-30 pr-2 pl-2 pb-2">
                     <form action="${root}/ManagerAccountServlet" method="post"">
+                   
+                    <p class="text-danger">${error}</p>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
                             <input type="email" name="email" class="form-control"  id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
@@ -66,7 +69,10 @@
                 
                 	<div class="d-flex ">
                 		  <h1 class="mt-4">Data Table Accounts</h1>
-              				<h6 class="text-success">${success}</h6>
+              				 <%String succced = (String)request.getAttribute("succced"); %>
+                                <%if(succced != null){ %>
+                                	<p class="text-success"><%=succced%> </p>
+                                <%} %>
                 	</div>
                   
                     	    

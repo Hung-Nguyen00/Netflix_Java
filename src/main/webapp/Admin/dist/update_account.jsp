@@ -37,13 +37,14 @@
                 <div class="mT-30 pr-2 pl-2 pb-2">
      
                     <form action="${root}/ManagerAccountServlet" method="post">
+                    <p class="text-danger">${error}</p>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
                             <input type="email" name="email_edit" class="form-control" required disabled value="<%=account.getEmail()%>">     	               	
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword">Password</label>
-                            <input type="text" name="password" size="50" class="form-control"  value="<%=account.getPasswordAccount() %>" placeholder="Password">
+                            <input type="text" name="password" required size="50" class="form-control"  value="<%=account.getPasswordAccount() %>" placeholder="Password">
                             
                         </div>
                          

@@ -1,6 +1,8 @@
 package controller;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -40,12 +42,14 @@ public class ManagerCategoryServlet extends HttpServlet {
 			switch (command) {
 				case "delete":
 					cateDAO.delete(Integer.parseInt(category_id));
-					url = "/Netflix_Clone/Admin/dist/categories_Movie.jsp?menu_id=" + menu_id;
+					request.setAttribute("succced", "A Movie was deleted successfully");	
+					url = "/Admin/dist/categories_Movie.jsp?menu_id=" + menu_id;
 					break;
 			}
 		} catch (Exception e) {
 		}
-		response.sendRedirect(url);
+		RequestDispatcher rd = getServletContext().getRequestDispatcher(url);
+		rd.forward(request, response);
 	}
 
 	/**
@@ -71,31 +75,37 @@ public class ManagerCategoryServlet extends HttpServlet {
 						if(menu_id == 1)
 						{
 							cateDAO.insert(new Category(cateDAO.getMaxId()+1, name_category,(byte)1));
-							url = "/Netflix_Clone/Admin/dist/categories_Movie.jsp?menu_id=" + menu_id;
+							request.setAttribute("succced", "A category was inserted successfully");	
+							url = "/Admin/dist/categories_Movie.jsp?menu_id=" + menu_id;
 							break;
 						}else if(menu_id == 2) {
 							cateDAO.insert(new Category(cateDAO.getMaxId()+1, name_category,(byte)2));
-							url = "/Netflix_Clone/Admin/dist/categories_Movie.jsp?menu_id=" + menu_id;
+							request.setAttribute("succced", "A category was inserted successfully");	
+							url = "/Admin/dist/categories_Movie.jsp?menu_id=" + menu_id;
 							break;
 						}
 				case "update":
 					if(menu_id == 1)
 					{
 						cateDAO.update(new Category(Integer.parseInt(category_id), name_category, (byte)1));
-						url = "/Netflix_Clone/Admin/dist/categories_Movie.jsp?menu_id=" + menu_id;
+						request.setAttribute("succced", "A category was updated successfully");	
+						url = "/Admin/dist/categories_Movie.jsp?menu_id=" + menu_id;
 						break;
 					}else if(menu_id == 2) {
 						cateDAO.update(new Category(Integer.parseInt(category_id), name_category, (byte)2));
-						url = "/Netflix_Clone/Admin/dist/categories_Movie.jsp?menu_id=" + menu_id;
+						request.setAttribute("succced", "A category was updated successfully");	
+						url = "/Admin/dist/categories_Movie.jsp?menu_id=" + menu_id;
 						break;
 					}
 				}
 			} else {
-				url =  "/Netflix_Clone/Admin/dist/categories_Movie.jsp?menu_id=" + menu_id;
+				request.setAttribute("error", error.toString());
+				url =  "/Admin/dist/categories_Movie.jsp?menu_id=" + menu_id;
 			}
 		} catch (Exception e) {
 		}
-			response.sendRedirect(url);
+			RequestDispatcher rd = getServletContext().getRequestDispatcher(url);
+			rd.forward(request, response);
 	}
 
 }

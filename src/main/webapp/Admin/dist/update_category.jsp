@@ -63,6 +63,11 @@
                         <li class="breadcrumb-item"><a href="${root}/Admin/dist/index.jsp">Dashboard</a></li>
                         <li class="breadcrumb-item">Movie</li>
                         <li class="breadcrumb-item active">Categories</li>
+                          <li class="ml-5">  <%String succced = (String)request.getAttribute("succced"); %>
+                                <%if(succced != null){ %>
+                                	<p class="text-success"><%=succced%> </p>
+                                <%} %>
+                               </li>
                     </ol>
                     <div class="card mb-4">
                         <div class="card-header">

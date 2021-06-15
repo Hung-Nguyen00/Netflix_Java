@@ -121,15 +121,15 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="trailer">Trailer</label>
-                                        <input type="text" name="trailer" placeholder="https://github.com/John-Nguyen0411/Clone-Netflix-/blob/main/Inner-Website/lib/js/app.js" class="form-control" id="trailer" placeholder="1234 Main St">
+                                        <input type="text" name="trailer" placeholder="HydvvEAYPYY" class="form-control" id="trailer" placeholder="1234 Main St">
                                     </div>
                                     <div class="form-group">
                                         <label for="Image">Image</label>
-                                        <input type="text" name="image" placeholder="https://github.com/John-Nguyen0411/Clone-Netflix-/blob/main/Inner-Website/lib/js/app.js" class="form-control" id="trailer" placeholder="1234 Main St">
+                                        <input type="text" name="image" placeholder="https://occ-0-325-395.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABZHwS6Ok8LXImU3o51s_2n7X4G-Pdk6SKBLirUGsIyHSgZi_mF8sjqbBOgwHc6-hwAZvLFfyWxgdaC_W8wV8hkL4yjbv.webp?r=f68" class="form-control" id="trailer" >
                                     </div>
                                     <div class="form-group">
                                         <label for="movie">Movie</label>
-                                        <input type="text" name="movie" value="https://github.com/John-Nguyen0411/Clone-Netflix-/blob/main/Inner-Website/lib/js/app.js" class="form-control" id="movie">
+                                        <input type="text" name="movie" value="2AUmvWm5ZDQ" class="form-control" id="movie">
                                     </div>
                                     <div class="form-group">
                                         <label for="Description">Description</label>
@@ -137,7 +137,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="Logo">Logo</label>
-                                        <input type="text" name="logo" value="https://github.com/John-Nguyen0411/Clone-Netflix-/blob/main/Inner-Website/lib/js/app.js" class="form-control" id="logo">
+                                        <input type="text" name="logo" value="https://occ-0-325-395.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABUgjF5KyrRg0h4VDauqyn2ZT_dUrHHka4e72h2A-itao-SFyH05CYpwHFNFGi0gpFV5P-xdA7LGcUzlnBzPgvcRSUDnKwhPsh8wx.webp?r=bec" class="form-control" id="logo">
                                     </div>
                                     <div class="form-group">
                                         <div class="checkbox checkbox-circle checkbox-info peers ai-c">

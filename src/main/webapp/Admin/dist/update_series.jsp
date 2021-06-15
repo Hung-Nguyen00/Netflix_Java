@@ -136,12 +136,12 @@
                                                 <td><%=am.getLast_update() %></td>
                                                 <td class="text-center">
                                                    <button class="btn btn-danger border-0">  
-                                                     <a class="text-decoration-none text-light" href="${root}/ManagerSeason?command=delete&movie_id=<%=param%>&season_id=<%=season_id%>&series_id=<%= am.getSeriesId()%>">
+                                                     <a class="text-decoration-none text-light" href="${root}/ManagerSeries?command=deleteSeries&movie_id=<%=param%>&season_id=<%=season_id%>&series_id=<%= am.getSeriesId()%>">
                                                      	<i class="fas fa-trash"></i>
                                                      </a>                                                
                                                      </button>
-                                                  <button class="btn btn-wrench border-0">
-                                                    <a href="${root}/Admin/dist/update_series.jsp?movie_id=<%=param%>&season_id=<%=season_id%>&series_id=<%= am.getSeriesId()%>&stt=<%=sttActor%> "> <i class="fas fa-eye"></i></a>
+                                                  <button class="btn border-0">
+                                                    <a  href="${root}/Admin/dist/update_series.jsp?movie_id=<%=param%>&season_id=<%=season_id%>&series_id=<%= am.getSeriesId()%>&stt=<%=sttActor%>"><i class="fas fa-eye"></i></a>
                                                 </button>
                                                 </td>
                                             </tr>
